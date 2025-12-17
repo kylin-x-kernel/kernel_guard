@@ -13,7 +13,8 @@ categories = ["os", "no-std"]
 
 [features]
 preempt = []
-default = []
+default = ["pmr"]
+pmr = []
 
 [dependencies]
 cfg-if = "1.0"
