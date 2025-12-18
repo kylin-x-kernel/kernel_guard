@@ -63,6 +63,12 @@ pub trait KernelGuardIf {
 
     /// How to disable kernel preemption.
     fn disable_preempt();
+
+    /// Saves the current local interrupt state and disables interrupts.
+    fn local_irq_save_and_disable() -> usize;
+
+    /// Restores the local interrupt state using the provided flags.
+    fn local_irq_restore(flags: usize);
 }
 
 /// A base trait that all guards implement.
